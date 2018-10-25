@@ -138,10 +138,9 @@ model1 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_ltc_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-early_stopping = EarlyStopping(monitor="val_loss", patience=3)
-callbacks_list = [checkpoint, metrics, early_stopping]
+callbacks_list = [checkpoint, metrics]
 history = model1.fit(input_train, Y_train_ltc, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_ltc), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_ltc), callbacks=callbacks_list, verbose=1)
 del model1
 del history
 gc.collect()
@@ -152,9 +151,10 @@ model2 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_ldfbd_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model2.fit(input_train, Y_train_ldfbd, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_ldfbd), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_ldfbd), callbacks=callbacks_list, verbose=1)
 del model2
 del history
 gc.collect()
@@ -165,9 +165,10 @@ model3 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_letf_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model3.fit(input_train, Y_train_letf, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_letf), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_letf), callbacks=callbacks_list, verbose=1)
 del model3
 del history
 gc.collect()
@@ -178,9 +179,10 @@ model4 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_swt_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model4.fit(input_train, Y_train_swt, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_swt), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_swt), callbacks=callbacks_list, verbose=1)
 del model4
 del history
 gc.collect()
@@ -191,9 +193,10 @@ model5 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_swa_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model5.fit(input_train, Y_train_swa, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_swa), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_swa), callbacks=callbacks_list, verbose=1)
 del model5
 del history
 gc.collect()
@@ -204,9 +207,10 @@ model6 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_spc_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model6.fit(input_train, Y_train_spc, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_spc), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_spc), callbacks=callbacks_list, verbose=1)
 del model6
 del history
 gc.collect()
@@ -217,9 +221,10 @@ model7 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_ssp_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model7.fit(input_train, Y_train_ssp, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_ssp), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_ssp), callbacks=callbacks_list, verbose=1)
 del model7
 del history
 gc.collect()
@@ -230,9 +235,10 @@ model8 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_pl_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model8.fit(input_train, Y_train_pl, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_pl), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_pl), callbacks=callbacks_list, verbose=1)
 del model8
 del history
 gc.collect()
@@ -243,9 +249,10 @@ model9 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_pce_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model9.fit(input_train, Y_train_pce, batch_size=batch_size, epochs=epochs,
-                     validation_data=(input_validation, Y_validation_pce), callbacks=callbacks_list, verbose=2)
+                     validation_data=(input_validation, Y_validation_pce), callbacks=callbacks_list, verbose=1)
 del model9
 del history
 gc.collect()
@@ -256,9 +263,10 @@ model10 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_pd_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model10.fit(input_train, Y_train_pd, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_pd), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_pd), callbacks=callbacks_list, verbose=1)
 del model10
 del history
 gc.collect()
@@ -269,9 +277,10 @@ model11 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_ed_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model11.fit(input_train, Y_train_ed, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_ed), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_ed), callbacks=callbacks_list, verbose=1)
 del model11
 del history
 gc.collect()
@@ -282,10 +291,10 @@ model12 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_en_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
-
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model12.fit(input_train, Y_train_en, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_en), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_en), callbacks=callbacks_list, verbose=1)
 del model12
 del history
 gc.collect()
@@ -296,10 +305,10 @@ model13 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_es_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
-
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model13.fit(input_train, Y_train_es, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_es), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_es), callbacks=callbacks_list, verbose=1)
 del model13
 del history
 gc.collect()
@@ -310,10 +319,10 @@ model14 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_ec_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
-
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model14.fit(input_train, Y_train_ec, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_ec), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_ec), callbacks=callbacks_list, verbose=1)
 del model14
 del history
 gc.collect()
@@ -324,9 +333,10 @@ model15 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_dp_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model15.fit(input_train, Y_train_dp, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_dp), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_dp), callbacks=callbacks_list, verbose=1)
 del model15
 del history
 gc.collect()
@@ -337,9 +347,10 @@ model16 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_dt_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model16.fit(input_train, Y_train_dt, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_dt), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_dt), callbacks=callbacks_list, verbose=1)
 del model16
 del history
 gc.collect()
@@ -350,9 +361,10 @@ model17 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_dl_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model17.fit(input_train, Y_train_dl, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_dl), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_dl), callbacks=callbacks_list, verbose=1)
 del model17
 del history
 gc.collect()
@@ -363,9 +375,10 @@ model18 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_dr_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model18.fit(input_train, Y_train_dr, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_dr), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_dr), callbacks=callbacks_list, verbose=1)
 del model18
 del history
 gc.collect()
@@ -376,9 +389,10 @@ model19 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_ooe_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model19.fit(input_train, Y_train_ooe, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_ooe), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_ooe), callbacks=callbacks_list, verbose=1)
 del model19
 del history
 gc.collect()
@@ -389,10 +403,10 @@ model20 = TextClassifier().model(embeddings_matrix, maxlen, word_index, 4)
 file_path = model_dir + "model_owta_{epoch:02d}.hdf5"
 checkpoint = ModelCheckpoint(file_path, verbose=2, save_weights_only=True)
 metrics = Metrics()
-callbacks_list = [checkpoint, metrics]
-
+early_stopping = EarlyStopping(monitor="val_loss", patience=4)
+callbacks_list = [checkpoint, metrics, early_stopping]
 history = model20.fit(input_train, Y_train_owta, batch_size=batch_size, epochs=epochs,
-                      validation_data=(input_validation, Y_validation_owta), callbacks=callbacks_list, verbose=2)
+                      validation_data=(input_validation, Y_validation_owta), callbacks=callbacks_list, verbose=1)
 del model20
 del history
 gc.collect()
